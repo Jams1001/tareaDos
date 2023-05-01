@@ -23,15 +23,58 @@ OTRO MODO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U
 OTROS ACUERDOS EN EL SOFTWARE.
 */
 
-#ifndef HEADER_SORT_HPP
-#def HEADER_SORT_HPP
+/**
+ * @file headerSort.hpp
+ * @author Jorge Mora (jorgeadan.mora@ucr.ac.cr)
+ * @brief This code creates different headerSorts for sorting algorithms
+ * @version 0.1
+ * @date 2023-30-04
+ * 
+ * @code {.cpp}
+  int main() {
+  return 0;
+  }
+ * @endcode
+ * 
+ * 
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 
+#ifndef HEADER_SORT_HPP
+#define HEADER_SORT_HPP
+
+/**
+ * @brief 
+ * 
+ * @param arr 
+ * @param n 
+ */
 void bubbleSort(int arr[], int n);
 
+/**
+ * @brief 
+ * 
+ * @param arr 
+ * @param n 
+ */
 void selectionSort(int arr[], int n);
 
+/**
+ * @brief 
+ * 
+ * @param arr 
+ * @param n 
+ */
 void insertionSort(int arr[], int n);
 
+/**
+ * @brief 
+ * 
+ * @param arr 
+ * @param n 
+ */
 void quickSort(int arr[], int low, int high);
 
-#endif /* HEADER_SORT_HPP */
+#endif //HEADER
