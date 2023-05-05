@@ -32,7 +32,7 @@ signatures.cpp:
 	echo '#endif //HEADER' >> ./signatures.hpp
 
 build: 
-	$(CC) $(CFLAGS) ./main.cpp ./fun.cpp -o ./output.out
+	$(CC) $(CFLAGS) ./stackTemplate.cpp -o ./output.out
 
 run: 
 	./output.out

@@ -67,23 +67,26 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="headerSort_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#ifndef HEADER_SORT_HPP</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define HEADER_SORT_HPP</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> <a class="code" href="headerSort_8hpp.html#a80a64c660726e8cfc7f933482004210f">bubbleSort</a>(<span class="keywordtype">int</span> arr[], <span class="keywordtype">int</span> n);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">void</span> <a class="code" href="headerSort_8hpp.html#ae8bb50a1a6f0f873bf2c91dd4adf4a1a">selectionSort</a>(<span class="keywordtype">int</span> arr[], <span class="keywordtype">int</span> n);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">void</span> <a class="code" href="headerSort_8hpp.html#a3fde3e15492d674dbd6caf7c061a2b35">insertionSort</a>(<span class="keywordtype">int</span> arr[], <span class="keywordtype">int</span> n);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keywordtype">void</span> <a class="code" href="headerSort_8hpp.html#a6deda3bd254bf5da0c533d0a02b81922">quickSort</a>(<span class="keywordtype">int</span> arr[], <span class="keywordtype">int</span> low, <span class="keywordtype">int</span> high);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif //HEADER</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#ifndef HEADER_SORT_HPP</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#define HEADER_SORT_HPP</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">void</span> <a class="code" href="headerSort_8hpp.html#a80a64c660726e8cfc7f933482004210f">bubbleSort</a>(<span class="keywordtype">int</span> arr[], <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">void</span> <a class="code" href="headerSort_8hpp.html#ae8bb50a1a6f0f873bf2c91dd4adf4a1a">selectionSort</a>(<span class="keywordtype">int</span> arr[], <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> <a class="code" href="headerSort_8hpp.html#a3fde3e15492d674dbd6caf7c061a2b35">insertionSort</a>(<span class="keywordtype">int</span> arr[], <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">void</span> <a class="code" href="headerSort_8hpp.html#a6deda3bd254bf5da0c533d0a02b81922">quickSort</a>(<span class="keywordtype">int</span> arr[], <span class="keywordtype">int</span> low, <span class="keywordtype">int</span> high);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif //HEADER_SORT_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aheaderSort_8hpp_html_a6deda3bd254bf5da0c533d0a02b81922"><div class="ttname"><a href="headerSort_8hpp.html#a6deda3bd254bf5da0c533d0a02b81922">quickSort</a></div><div class="ttdeci">void quickSort(int arr[], int low, int high)</div></div>
-<div class="ttc" id="aheaderSort_8hpp_html_a3fde3e15492d674dbd6caf7c061a2b35"><div class="ttname"><a href="headerSort_8hpp.html#a3fde3e15492d674dbd6caf7c061a2b35">insertionSort</a></div><div class="ttdeci">void insertionSort(int arr[], int n)</div></div>
-<div class="ttc" id="aheaderSort_8hpp_html_a80a64c660726e8cfc7f933482004210f"><div class="ttname"><a href="headerSort_8hpp.html#a80a64c660726e8cfc7f933482004210f">bubbleSort</a></div><div class="ttdeci">void bubbleSort(int arr[], int n)</div></div>
-<div class="ttc" id="aheaderSort_8hpp_html_ae8bb50a1a6f0f873bf2c91dd4adf4a1a"><div class="ttname"><a href="headerSort_8hpp.html#ae8bb50a1a6f0f873bf2c91dd4adf4a1a">selectionSort</a></div><div class="ttdeci">void selectionSort(int arr[], int n)</div></div>
+<div class="ttc" id="aheaderSort_8hpp_html_a6deda3bd254bf5da0c533d0a02b81922"><div class="ttname"><a href="headerSort_8hpp.html#a6deda3bd254bf5da0c533d0a02b81922">quickSort</a></div><div class="ttdeci">void quickSort(int arr[], int low, int high)</div><div class="ttdoc">Sorts an array of integers using the Quick Sort algorithm.</div><div class="ttdef"><b>Definition:</b> fun.cpp:46</div></div>
+<div class="ttc" id="aheaderSort_8hpp_html_a3fde3e15492d674dbd6caf7c061a2b35"><div class="ttname"><a href="headerSort_8hpp.html#a3fde3e15492d674dbd6caf7c061a2b35">insertionSort</a></div><div class="ttdeci">void insertionSort(int arr[], int n)</div><div class="ttdoc">Sorts an array of integers using the Insertion Sort algorithm.</div><div class="ttdef"><b>Definition:</b> fun.cpp:32</div></div>
+<div class="ttc" id="aheaderSort_8hpp_html_a80a64c660726e8cfc7f933482004210f"><div class="ttname"><a href="headerSort_8hpp.html#a80a64c660726e8cfc7f933482004210f">bubbleSort</a></div><div class="ttdeci">void bubbleSort(int arr[], int n)</div><div class="ttdoc">Sorts an array of integers using the Bubble Sort algorithm.</div><div class="ttdef"><b>Definition:</b> fun.cpp:3</div></div>
+<div class="ttc" id="aheaderSort_8hpp_html_ae8bb50a1a6f0f873bf2c91dd4adf4a1a"><div class="ttname"><a href="headerSort_8hpp.html#ae8bb50a1a6f0f873bf2c91dd4adf4a1a">selectionSort</a></div><div class="ttdeci">void selectionSort(int arr[], int n)</div><div class="ttdoc">Sorts an array of integers using the Selection Sort algorithm.</div><div class="ttdef"><b>Definition:</b> fun.cpp:16</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
