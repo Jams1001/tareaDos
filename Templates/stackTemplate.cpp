@@ -96,5 +96,30 @@ int main() {
     std::cerr << "Exception: " << e.what() << std::endl;
   }
 
+  // New instance of Stack with std::string type
+  Stack<std::string> s_str;
+  s_str.push("Holis");
+  s_str.push("Ana");
+  s_str.push("Me pone 100");
+  std::cout << "String stack size: " << s_str.size() << std::endl;
+  s_str.foreach([](std::string& value) {
+    std::cout << "String value: " << value << std::endl;
+  });
+
+  try {
+    // Pop all values off the stack and print them
+    while (!s_str.empty()) {
+      std::string value = s_str.pop();
+      std::cout << "Popped string value: " << value << std::endl;
+    }
+    
+    //// Attempt to pop an item from an empty stack
+    //std::string value = s_str.pop();
+    //std::cout << "Popped value: " << value << std::endl;
+    
+    std::cout << "String stack size: " << s_str.size() << std::endl;
+  } catch (const std::exception& e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
   return 0;
 }

@@ -1,44 +1,59 @@
 CC = g++
 CFLAGS = -Wall -std=c++11
 
+MAIN_FILE = main
+MAIN_FILE2 = exceptions
+FUN_FILE = fun
+SIGNATURES_FILE = headerSort
+BUILD_DIR = build
+
 all: build run clean
-template: main fun signatures
+template: $(MAIN_FILE).cpp $(FUN_FILE).cpp $(SIGNATURES_FILE).hpp
 
-main.cpp:
-	if [ ! -f main.cpp ]; then \
-	echo '#include "signatures.hpp"' > ./main.cpp
-	echo '' >> ./main.cpp
-	echo 'int main() {' >> ./main.cpp
-	echo '  func_inicial();' >> ./main.cpp
-	echo '  return 0;' >> ./main.cpp
-	echo '}' >> ./main.cpp
+$(MAIN_FILE).cpp:
+	if [ ! -f $(MAIN_FILE).cpp ]; then \
+	echo '#include "$(SIGNATURES_FILE).hpp"' > ./$(MAIN_FILE).cpp; \
+	echo '' >> ./$(MAIN_FILE).cpp; \
+	echo 'int main() {' >> ./$(MAIN_FILE).cpp; \
+	echo '  func_inicial();' >> ./$(MAIN_FILE).cpp; \
+	echo '  return 0;' >> ./$(MAIN_FILE).cpp; \
+	echo '}' >> ./$(MAIN_FILE).cpp; \
+	fi
 
-fun.cpp:
-	if [ ! -f fun.cpp ]; then \
-	echo '#include "signatures.hpp"' > ./fun.cpp
-	echo '' >> ./fun.cpp
-	echo 'void func_inicial() {' >> ./fun.cpp
-	echo '  // Esta función no hace nada' >> ./fun.cpp
-	echo '};' >> ./fun.cpp
+$(FUN_FILE).cpp:
+	if [ ! -f $(FUN_FILE).cpp ]; then \
+	echo '#include "$(SIGNATURES_FILE).hpp"' > ./$(FUN_FILE).cpp; \
+	echo '' >> ./$(FUN_FILE).cpp; \
+	echo 'void func_inicial() {' >> ./$(FUN_FILE).cpp; \
+	echo '  // Esta función no hace nada' >> ./$(FUN_FILE).cpp; \
+	echo '};' >> ./$(FUN_FILE).cpp; \
+	fi
 
-signatures.cpp:
-	if [ ! -f signatures.cpp ]; then \
-	echo '#ifndef HEADER' > ./signatures.hpp
-	echo '#define HEADER' >> ./signatures.hpp
-	echo '#include <iostream>' >> ./signatures.hpp
-	echo '' >> ./signatures.hpp
-	echo 'void func_inicial();' >> ./signatures.hpp
-	echo '' >> ./signatures.hpp
-	echo '#endif //HEADER' >> ./signatures.hpp
+$(SIGNATURES_FILE).hpp:
+	if [ ! -f $(SIGNATURES_FILE).hpp ]; then \
+	echo '#ifndef SIGNATURES_HPP' > ./$(SIGNATURES_FILE).hpp; \
+	echo '#define SIGNATURES_HPP' >> ./$(SIGNATURES_FILE).hpp; \
+	echo '#include <iostream>' >> ./$(SIGNATURES_FILE).hpp; \
+	echo '' >> ./$(SIGNATURES_FILE).hpp; \
+	echo 'void func_inicial();' >> ./$(SIGNATURES_FILE).hpp; \
+	echo '' >> ./$(SIGNATURES_FILE).hpp; \
+	echo '#endif //SIGNATURES_HPP' >> ./$(SIGNATURES_FILE).hpp; \
+	fi
 
 build: 
-	$(CC) $(CFLAGS) ./main.cpp ./fun.cpp -o ./output.out
+	mkdir -p $(BUILD_DIR)
+	$(CC) $(CFLAGS) ./$(MAIN_FILE).cpp ./$(FUN_FILE).cpp -o ./$(BUILD_DIR)/output.out
+
+run2:
+	mkdir -p $(BUILD_DIR)
+	$(CC) $(CFLAGS) ./$(MAIN_FILE2).cpp -o ./$(BUILD_DIR)/output.out
+	./$(BUILD_DIR)/output.out
 
 run: 
-	./output.out
+	./$(BUILD_DIR)/output.out
 
 clean:
-	rm -f ./*.out
+	rm -rf $(BUILD_DIR)
 
 documentation-firefox:
 	firefox ./html/index.html
@@ -46,4 +61,4 @@ documentation-firefox:
 documentation-Chrome:
 	google-chrome ./html/index.html
 
-.PHONY: all template build run clean documentayion-firefox documentation-Chrome
+.PHONY: all template build run run2 clean documentation-firefox documentation-Chrome

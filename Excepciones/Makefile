@@ -2,13 +2,12 @@ CC = g++
 CFLAGS = -Wall -std=c++11
 
 MAIN_FILE = main
-MAIN_FILE2 = stackTemplate
+MAIN_FILE2 = exceptions
 FUN_FILE = exceptions
 SIGNATURES_FILE = signatures
 BUILD_DIR = build
 
-all: run2
-all2: build run clean
+all: build run clean
 template: $(MAIN_FILE).cpp $(FUN_FILE).cpp $(SIGNATURES_FILE).hpp
 
 $(MAIN_FILE).cpp:

@@ -23,22 +23,8 @@ OTRO MODO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U
 OTROS ACUERDOS EN EL SOFTWARE.
 */
 
-#include <iostream>
+#include "signatures.hpp"
 
-class MyException : public std::exception {
-public:
-  const char* what() const throw() {
+const char* MyException::what() const throw() {
     return "My custom exception";
-  }
-};
-
-int main() {
-
-  try {
-    throw MyException();
-  } catch (std::exception& e) {
-    std::cout << "Error: " << e.what() << std::endl;
-  }
-
-  return 0;
 }
