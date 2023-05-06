@@ -8,7 +8,7 @@ Jorge Adán Mora Soto - B95222 - <jorgeadan.mora@ucr.ac.cr>
 
 Compilador g++ con soporte para C++11
 
-## Instrucciones de uso:
+Esta tarea estará orientada al caso donde se heredan proyectos a medias y hay que trabajar sobre
+ellos tal y como se toman.
 
-1. Ubicarse en el path: **/tareaDos/Templates**
-2. Ejecutar la sintaxis: `make`
+Repositorio base de la tarea 2: <https://github.com/ebadilla10/tarea2_ie0217_i2023>
