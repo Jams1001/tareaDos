@@ -26,19 +26,22 @@ OTROS ACUERDOS EN EL SOFTWARE.
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <stdexcept>
+//#include <stdexcept>
 #include <functional>
 
+// Stack class template
 template<typename T>
 class Stack {
 private:
-  std::vector<T> data_;
+  std::vector<T> data_; // Stack data as a vector
 
 public:
+  // Pushes a value onto the stack
   void push(T value) {
     data_.push_back(value);
   }
 
+  // Pops the top value off the stack
   T pop() {
     if (data_.empty()) {
       throw std::out_of_range("Stack is empty");
@@ -48,18 +51,22 @@ public:
     return value;
   }
 
+  // Clears the stack
   void clear() {
     data_.clear();
   }
 
+  // Checks if the stack is empty
   bool empty() const {
     return data_.empty();
   }
 
+  // Returns the stack size
   std::size_t size() const {
     return data_.size();
   }
 
+  // Applies a function to each element in the stack
   void foreach(const std::function<void(T&)>& func) {
     std::for_each(data_.begin(), data_.end(), func);
   }
@@ -73,11 +80,13 @@ int main() {
 
   std::cout << "Stack size: " << s.size() << std::endl;
 
+  // Print each value in the stack
   s.foreach([](int& value) {
     std::cout << "Value: " << value << std::endl;
   });
 
   try {
+    // Pop all values off the stack and print them
     while (!s.empty()) {
       int value = s.pop();
       std::cout << "Popped value: " << value << std::endl;
@@ -87,5 +96,30 @@ int main() {
     std::cerr << "Exception: " << e.what() << std::endl;
   }
 
+  // New instance of Stack with std::string type
+  Stack<std::string> s_str;
+  s_str.push("Holis");
+  s_str.push("Ana");
+  s_str.push("Me pone 100");
+  std::cout << "String stack size: " << s_str.size() << std::endl;
+  s_str.foreach([](std::string& value) {
+    std::cout << "String value: " << value << std::endl;
+  });
+
+  try {
+    // Pop all values off the stack and print them
+    while (!s_str.empty()) {
+      std::string value = s_str.pop();
+      std::cout << "Popped string value: " << value << std::endl;
+    }
+    
+    //// Attempt to pop an item from an empty stack
+    //std::string value = s_str.pop();
+    //std::cout << "Popped value: " << value << std::endl;
+    
+    std::cout << "String stack size: " << s_str.size() << std::endl;
+  } catch (const std::exception& e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
   return 0;
 }
